@@ -5,7 +5,9 @@ edition = "2021"
 
 [dependencies]
 wit-bindgen-rt = { version = "0.24.0", features = ["bitflags"] }
-aws-config = { version = "1.2.0", default-features = false }
+aws-config = { version = "1.2.0", default-features = false, features = [
+    "rt-tokio",
+] }
 aws-sdk-ec2 = { version = "1.33.0", default-features = false }
 aws-smithy-runtime = { version = "1", default-features = false }
 aws-smithy-wasm = { version = "0.1.2", default-features = false }

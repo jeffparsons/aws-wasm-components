@@ -8,9 +8,12 @@ struct Component;
 
 impl Guest for Component {
     fn hello_world() -> String {
+        dbg!(std::time::SystemTime::now());
+
         let wasi_http_client = aws_smithy_wasm::wasi::WasiHttpClientBuilder::new().build();
 
         let rt = tokio::runtime::Builder::new_current_thread()
+            .enable_time()
             .build()
             .unwrap();
 
