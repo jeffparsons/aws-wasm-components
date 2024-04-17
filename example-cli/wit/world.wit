@@ -1,0 +1,5 @@
+package jeffparsons:example-cli;
+
+world example-cli {
+    import jeffparsons:ec2/ec2;
+}

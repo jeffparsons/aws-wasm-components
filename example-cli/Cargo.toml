@@ -1,0 +1,15 @@
+[package]
+name = "example-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen-rt = { version = "0.24.0", features = ["bitflags"] }
+
+[package.metadata.component]
+package = "jeffparsons:example-cli"
+
+[package.metadata.component.dependencies]
+
+[package.metadata.component.target.dependencies]
+"jeffparsons:ec2" = { path = "../ec2/wit" }

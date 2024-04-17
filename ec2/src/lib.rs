@@ -2,12 +2,11 @@
 mod bindings;
 
 use aws_config::BehaviorVersion;
-use bindings::Guest;
+use bindings::exports::jeffparsons::ec2::ec2::Guest;
 
 struct Component;
 
 impl Guest for Component {
-    /// Say hello!
     fn hello_world() -> String {
         let wasi_http_client = aws_smithy_wasm::wasi::WasiHttpClientBuilder::new().build();
 
@@ -25,11 +24,11 @@ impl Guest for Component {
             let instances = client.describe_instances().send().await.unwrap();
             let instances: Vec<_> = instances
                 .reservations()
-                .into_iter()
+                .iter()
                 .flat_map(|reservation| {
                     reservation
                         .instances()
-                        .into_iter()
+                        .iter()
                         .map(|instance| instance.instance_id.clone().unwrap())
                 })
                 .collect();

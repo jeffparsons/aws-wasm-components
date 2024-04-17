@@ -1,5 +1,9 @@
 package jeffparsons:ec2;
 
-world example {
-    export hello-world: func() -> string;
+world ec2-exporter {
+    export ec2;
+}
+
+interface ec2 {
+    hello-world: func() -> string;
 }
