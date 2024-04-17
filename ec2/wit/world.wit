@@ -1,0 +1,5 @@
+package jeffparsons:ec2;
+
+world example {
+    export hello-world: func() -> string;
+}

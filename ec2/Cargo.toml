@@ -1,0 +1,20 @@
+[package]
+name = "ec2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen-rt = { version = "0.24.0", features = ["bitflags"] }
+aws-config = { version = "1.2.0", default-features = false }
+aws-sdk-ec2 = { version = "1.33.0", default-features = false }
+aws-smithy-runtime = { version = "1", default-features = false }
+aws-smithy-wasm = { version = "0.1.2", default-features = false }
+tokio = { version = "1.37.0", default-features = false, features = ['rt'] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.component]
+package = "jeffparsons:ec2"
+
+[package.metadata.component.dependencies]
